@@ -3,7 +3,7 @@ FROM node:18.14.0-buster-slim
 # We don't need the standalone Chromium
 ENV DEBUG puppeteer:*
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
-RUN /bin/bash -c "adduser --disabled-password --gecos '' myuser "
+#RUN /bin/bash -c "adduser --disabled-password --gecos '' myuser "
 
 # Install Google Chrome Stable and fonts
 # Note: this installs the necessary libs to make the browser work with Puppeteer.
@@ -22,13 +22,13 @@ COPY package.json ./
 # Install NPM dependencies for function
 RUN npm install
 # Install puppeteer so it's available in the container.
-RUN npm init -y &&  \
-    npm i puppeteer 
+#RUN npm init -y &&  \
+   # npm i puppeteer 
 # Copy handler function and tsconfig
 COPY server.js ./
 
 # Expose app
 EXPOSE 3000
-RUN /bin/bash -c "chown -R myuser /srv "
+#RUN /bin/bash -c "chown -R myuser /srv "
 # Run app
 CMD ["node", "server.js"]
