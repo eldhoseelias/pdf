@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install gnupg wget -y && \
   rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
-ENV DBUS_SESSION_BUS_ADDRESS autolaunch:
+#ENV DBUS_SESSION_BUS_ADDRESS autolaunch:
 # Copy package.json
 COPY package.json ./
 
