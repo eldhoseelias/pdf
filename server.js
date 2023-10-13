@@ -19,7 +19,7 @@ app.get('/pdf', async (req, res) => {
     <html>
     <body>
     
-    <h1>My First Heading 1</h1>
+    <h1>My First Heading 2</h1>
     
     <p>My first paragraph.</p>
     
